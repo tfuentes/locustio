@@ -12,14 +12,14 @@ class UserBehavior(TaskSet):
                 #print "Headers:", response.headers
                 #print "Response content:", response.content
                 with self.client.get("/", catch_response=True) as response:
-                        Message = extended_methods.CheckContent(response,"hola")
+                        extended_methods.CheckContent(response,"Barcelona")
 
                 #print "Cookies:", response.cookies
                 #print "Codigos previos (redirects):", response.history
 
-        @task(1)
-        def dedicados(self):
-                self.client.get("/dedicados-e-hibridos")
+        #@task(1)
+        #def dedicados(self):
+        #        self.client.get("/dedicados-e-hibridos")
 
 class WebsiteUser(HttpLocust):
         task_set = UserBehavior # creamos objeto de la clase TaskSet
